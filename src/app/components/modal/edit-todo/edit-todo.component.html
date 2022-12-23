@@ -3,7 +3,29 @@
     Edit Todo
   </ng-container>
   <ng-container modal-body>
-    <!-- TODO -->
+    <form *ngIf="currentTodo">
+      <div class="form-group">
+        <label for="creatorInput">Creator name</label>
+        <input [(ngModel)]="currentTodo.creator" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+               id="creatorInput" placeholder="Jon Doe" [disabled]="true">
+      </div>
+      <div class="form-group">
+        <label for="contentInput">Content of todo</label>
+        <textarea [(ngModel)]="currentTodo.content" [ngModelOptions]="{standalone: true}" class="form-control"
+                  id="contentInput" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="priorityInput">Priority (1-10)</label>
+        <input [(ngModel)]="currentTodo.priority" [ngModelOptions]="{standalone: true}" type="number"
+               class="form-control"
+               id="priorityInput" placeholder="1">
+      </div>
+      <div class="form-group form-check">
+        <input [(ngModel)]="currentTodo.finished" [ngModelOptions]="{standalone: true}" type="checkbox"
+               class="form-check-input" id="finishedBox">
+        <label class="form-check-label" for="finishedBox">Finished?</label>
+      </div>
+    </form>
   </ng-container>
   <ng-container modal-footer>
     <button type="button" class="btn btn-secondary" (click)="modal.close()">

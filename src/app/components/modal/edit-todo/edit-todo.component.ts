@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+
+import {ToastService} from "ng-bootstrap-ext";
 import {Todo} from "../../../core/model/todo/todo";
 import {TodoService} from "../../../core/service/todo-service.service";
 
@@ -14,6 +16,7 @@ export class EditTodoComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private todoService: TodoService,
+              private toastService: ToastService,
   ) {
   }
 
@@ -25,7 +28,11 @@ export class EditTodoComponent implements OnInit {
   }
 
   save() {
-    this.todoService.updateOne(this.id, this.currentTodo);
+    this.todoService.updateOne(this.id, this.currentTodo).subscribe(() => {
+      this.toastService.success('Todo', 'Successfully updated Todo')
+    }, (error) => {
+      this.toastService.error('Todo', 'Failed to update Todo')
+    });
   }
 
   private getTodo() {
