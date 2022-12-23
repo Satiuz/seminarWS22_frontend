@@ -7,12 +7,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ModalModule} from "ng-bootstrap-ext";
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {CreateEditTodoComponent} from './components/modal/create-edit-todo/create-edit-todo.component';
+import {EditTodoComponent} from './components/modal/edit-todo/edit-todo.component';
+import { CreateTodoComponent } from './components/modal/create-todo/create-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEditTodoComponent
+    EditTodoComponent,
+    CreateTodoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,17 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CreateEditTodoComponent} from "./components/modal/create-edit-todo/create-edit-todo.component";
+
+import {EditTodoComponent} from "./components/modal/edit-todo/edit-todo.component";
+import {CreateTodoComponent} from "./components/modal/create-todo/create-todo.component";
 
 const routes: Routes = [
   {
     path: 'create',
-    component: CreateEditTodoComponent
+    component: CreateTodoComponent
   },
   {
     path: 'edit/:id',
-    component: CreateEditTodoComponent
+    component: EditTodoComponent
   }
 ];
 
