@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://seminarws22frontend-production.up.railway.app/', // TODO
+  baseUrl: 'https://seminarws22backend-production.up.railway.app/', // TODO
 };
